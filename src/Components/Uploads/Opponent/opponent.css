@@ -1,0 +1,16 @@
+.btn-design {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(180deg, #01ef8e 0%, #004f2e 100%);
+  box-shadow: -2px -2px 6px rgba(255, 255, 255, 0.25),
+    4px 4px 12px rgba(0, 0, 0, 0.44);
+  border-radius: 50%;
+  color: #fff;
+  opacity: 0.6;
+  font-size: 50px;
+}
+.btn-design:hover {
+  cursor: pointer;
+  opacity: 1;
+  color: #fff;
+}

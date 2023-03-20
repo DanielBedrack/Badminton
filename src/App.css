@@ -1,0 +1,15 @@
+.App {
+  background: linear-gradient(358.86deg, #0a1e14 20.75%, #1d402d 83.17%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+.container{
+  width: 90%;
+  margin: auto;
+}

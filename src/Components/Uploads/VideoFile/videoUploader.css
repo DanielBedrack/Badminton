@@ -1,0 +1,19 @@
+.video-container {
+  margin-top: 40px;
+  padding-top: 100px;
+  box-sizing: border-box;
+  border: 3px dashed #727374;
+  border-radius: 16px;
+  height: 400px;
+  width: 500px;
+}
+.video-container:hover{
+    border: 4px dashed #fff;
+    cursor: pointer;
+}
+.file-upload{
+    /* display: none; */
+}
+.progress-bar{
+    background-color: #fff;
+}
