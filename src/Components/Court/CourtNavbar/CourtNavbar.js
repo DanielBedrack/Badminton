@@ -5,9 +5,9 @@ const CourtNavbar = () => {
   const [selectedColor, setSelectedColor] = useState(null);
   const [dragPosition, setDragPosition] = useState(false);
 
-    const draggable = () => {
-      setDragPosition(!dragPosition);
-    };
+  const draggable = () => {
+    setDragPosition(!dragPosition);
+  };
 
   const handleMouseDown = (event, color) => {
     setSelectedColor(color);

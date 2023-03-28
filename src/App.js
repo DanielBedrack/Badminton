@@ -27,8 +27,8 @@ function App() {
           <Route path="/matches" element={<Matches />} />
           <Route path="/logout" element={<Logout />} />
           <Route path="/help" element={<Help />} />
-          <Route path="/game" element={<Game />} />
-          <Route path="/shots" element={<Shots />} />
+          <Route path="/analysis/game" element={<Game />} />
+          <Route path="/analysis/shots" element={<Shots />} />
         </Routes>
       </div>
     </div>
