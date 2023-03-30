@@ -1,19 +1,45 @@
-import React from "react";
 
-const GameStats = (props) => {
+import './stats.css'
+
+const GameStats = () => {
+
+//   const [stats, setStats] = useState([])
+
+//   const statsCheck = () =>{
+//     stats.forEach(stat => {
+//       return (
+//         <div className="">
+
+//         </div>
+//       )
+//     });
+// }
+
   return (
     <div className="stats-container">
-      {/* {props.stats.map((stat) => (
-        <div key={stat.id} className="stats-line">
-          Player 1: {stat.player1_shots} - Winner Shots - Player 2:{" "}
-          {stat.player2_shots}
+      <div className="game-results">
+        <p>Game Time</p>
+        <div className="result-div">
+          <p>Me</p>
+          <div className="results">
+            <p>first set</p>
+            <p>second set</p>
+            <p>third set?</p>
+          </div>
+          <p>Opponent</p>
         </div>
-      ))} */}
-      Player 1: X - Winner Shots - Player 2: Y Player 1: X - Winner Shots -
-      Player 1: X - Winner Shots - Player 2: Y Player 1: X - Winner Shots -
-      Player 1: X - Winner Shots - Player 2: Y Player 1: X - Winner Shots -
-      Player 1: X - Winner Shots - Player 2: Y Player 1: X - Winner Shots -
-      Player 2: Y Player 2: Y Player 2: Y Player 2: Y
+        <div className="all-results">
+          Player 1: X - Winner Shots - Player 2: Y Player 1: X - Winner Shots -
+          <br />
+          Player 1: X - Winner Shots - Player 2: Y Player 1: X - Winner Shots -
+          <br />
+          Player 1: X - Winner Shots - Player 2: Y Player 1: X - Winner Shots -
+          <br />
+          Player 1: X - Winner Shots - Player 2: Y Player 1: X - Winner Shots -
+          <br />
+          Player 2: Y Player 2: Y Player 2: Y Player 2: Y
+        </div>
+      </div>
     </div>
   );
 };

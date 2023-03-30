@@ -11,6 +11,7 @@ import "./App.css";
 import Analysis from "./Pages/Analysis/Analysis";
 
 function App() {
+  
   const [user, setUser] = useState(null);
 
   return (

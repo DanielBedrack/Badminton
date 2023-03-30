@@ -1,0 +1,3 @@
+hAmkjZGwUoZ0oZut
+
+var_url = 'mongodb+srv://Daniel2235:hAmkjZGwUoZ0oZut@badminton.ah2zyar.mongodb.net/?retryWrites=true&w=majority'
