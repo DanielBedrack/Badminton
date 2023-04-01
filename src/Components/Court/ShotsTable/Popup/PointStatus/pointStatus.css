@@ -1,0 +1,22 @@
+.popup-inner .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: #fff;
+}
+.points {
+    display: flex;
+    justify-content: space-between;
+}
+
+.point{
+    border: solid 2px #fff;
+    width: 20%;
+    height: 10vh;
+    border-radius: 10px;
+    opacity: 0.6;
+}
+.point:hover{
+    cursor: pointer;
+    opacity: 1;
+}

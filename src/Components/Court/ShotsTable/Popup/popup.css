@@ -21,21 +21,13 @@
     box-shadow: -20px 20px 30px #000000;
     border-radius: 10px;
 }
-
-.popup-inner .close-btn {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    color: #fff;
-}
-.points {
+.buttons{
+    padding-top: 30px;
     display: flex;
     justify-content: space-between;
 }
-
-.point{
-    border: solid 2px #fff;
-    width: 20%;
-    height: 10vh;
-    border-radius: 10px;
+.button{
+    width: 60px;
+    height: 30px;
+    font-size: large;
 }

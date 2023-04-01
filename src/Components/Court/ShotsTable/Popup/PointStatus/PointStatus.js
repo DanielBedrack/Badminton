@@ -1,41 +1,39 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
+import './pointStatus.css'
 
-const PointStatus = ( props ) => {
-    const [activatedType ,setActivatedType] = useState('')
+const PointStatus = (props) => {
+  const [activatedType, setActivatedType] = useState("");
 
-      const pointType = [
-        {
-          option1: "point" ,
-          option2: "mistake",
-          option3: "o-point",
-          option4: "o-mistake",
-        },
-      ];
+  const pointType = [
+    {option1: "point", bgColor: ''},
+    {option2: "mistake"},
+    {option3: "o-point"},
+    {option4: "o-mistake"}
+  ];
 
-      const submitHandle = () => {};
+  const submitHandle = () => {};
 
-      const handleButtonClick = (chosenType) => {
-        pointType.forEach(type => {
-            if (type === chosenType) {
-                setActivatedType(chosenType)
-            }
-        });
-        // const button = document.querySelector(`.button:nth-child(${buttonNum})`);
-        // if (button !== activeButton) {
-        //   if (activeButton) {
-        //     activeButton.checked = false;
-        //   }
-        //   button.checked = true;
-        //   setActiveButton(button);
-        // } else {
-        //   button.checked = false;
-        //   setActiveButton(null);
-        // }
-      };
+  const handleButtonClick = (chosenType) => {
+    pointType.forEach((type) => {
+      if (type === chosenType) {
+        setActivatedType(chosenType);
+      }
+    });
+    // const button = document.querySelector(`.button:nth-child(${buttonNum})`);
+    // if (button !== activeButton) {
+    //   if (activeButton) {
+    //     activeButton.checked = false;
+    //   }
+    //   button.checked = true;
+    //   setActiveButton(button);
+    // } else {
+    //   button.checked = false;
+    //   setActiveButton(null);
+    // }
+  };
 
   return (
-    <div className="popup">
-      <div className="popup-inner">
+<div>
         <button className="close-btn" onClick={() => props.setShowPopup(false)}>
           X
         </button>
@@ -78,16 +76,15 @@ const PointStatus = ( props ) => {
                 name="point"
                 value="o-mistake"
                 style={{ color: "#E5A84C" }}
-                onClick={() => handleButtonClick('o-mistake')}
+                onClick={() => handleButtonClick("o-mistake")}
               />
               O-Mistake
             </label>
           </div>
         </form>
         {props.children}
-      </div>
     </div>
   );
-}
+};
 
-export default PointStatus
+export default PointStatus;
