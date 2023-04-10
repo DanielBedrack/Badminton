@@ -1,10 +1,11 @@
 const express = require("express");
 const {
-  createUser,
+  signupUser,
   getUsers,
   getUser,
   deleteUser,
-  updateUser
+  updateUser,
+  loginUser
 } = require("../Controllers/userController");
 // const bcrypt = require('bcrypt')
 // const { handlerNewUser } = require("../Controllers/registerController");
@@ -16,8 +17,14 @@ router.get("/", getUsers);
 //Get a single user
 router.get("/:id", getUser);
 
+//Signup a new User
+router.post("/signup", signupUser);
+
+//login a new User
+router.post("/login", loginUser);
+
 //Post a new User
-router.post("/", createUser);
+router.post("/sign", );
 
 //Post a new User
 router.delete("/:id", deleteUser);
