@@ -1,9 +1,9 @@
-import React from 'react'
-import './filters.css'
+import React from "react";
+import "./filters.css";
 
 const Filters = () => {
-    const filer1 = ["Backhand", "Forehand"];
-    const filer2 = ["Net", "Back Line", "Center Court", "Serve"];
+  const filer1 = ["Backhand", "Forehand"];
+  const filer2 = ["Net", "Back Line", "Center Court", "Serve"];
 
   return (
     <div className="filters-container">
@@ -21,9 +21,9 @@ const Filters = () => {
           </div>
         ))}
       </div>
-      <textarea placeholder='Description'/>
+      <textarea placeholder="Description" />
     </div>
   );
-}
+};
 
-export default Filters
+export default Filters;

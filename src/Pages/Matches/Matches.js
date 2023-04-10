@@ -1,11 +1,18 @@
-import React from 'react'
+// import React, { useState } from 'react'
+// import MatchDetails from '../../Components/Match/MatchDetails'
 
-const Matches = () => {
+const Matches = ( props ) => {
+  const { matches } = props;
+
   return (
-    <div>
-      
+    <div className='matches-container'>
+      {matches.map((match) => (
+        <div key={match.id}>
+          {/* <MatchDetails match={match}/> */}
+        </div>
+      ))}
     </div>
-  )
+  );
 }
 
 export default Matches
