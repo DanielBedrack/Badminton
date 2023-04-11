@@ -7,7 +7,18 @@ const createToken = (_id) => {
 };
 
 //login user
-const loginUser = async (req, res) => {};
+const loginUser = async (req, res) => {
+  const { username, password } = req.body;
+
+  try {
+    const user = await User.login(username, password);
+    const token = createToken(user._id);
+
+    res.status(200).json({ success: user, token });
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};
 
 // Signup new User
 const signupUser = async (req, res) => {
@@ -26,7 +37,6 @@ const signupUser = async (req, res) => {
 // GET all Users
 const getUsers = async (req, res) => {
   const users = await User.find({}).sort({ createdAt: -1 });
-
   res.status(200).json(users);
 };
 

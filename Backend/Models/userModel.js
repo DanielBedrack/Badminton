@@ -48,10 +48,22 @@ userSchema.statics.signup = async function(username, password, mail) {
   return user;
 }
 
-// userSchema.statics.login = async function(username, password) {
-//   if (!username || !password || !mail) {
-//     throw Error("All fields must be field");
-//   }
-//   const exist = await this.findOne({ username, hashPwd });
-// }
+userSchema.statics.login = async function(username, password) {
+
+  if (!username || !password) {
+    throw Error("All fields must be field");
+  }
+  
+  const exist = await this.findOne({ username });
+  if (!exist) {
+    throw Error('Incorrect Username')
+  }
+
+  const match = await bcrypt.compare(password , exist.password)
+  if (!match) {
+    throw Error('Incorect Password')
+  }
+
+  return exist;
+}
 module.exports = mongoose.model('User', userSchema)
