@@ -6,18 +6,20 @@ const NameFilter = (props) => {
   const [name, setName] = useState("");
   const [opponentsName, setOpponentsName] = useState([]);
 
-  const fetchNames = () => {
-    setOpponentsName(dumyOpponents);
-  }
-  let dumyOpponents = [
-    { name: "Daniel" },
-    { name: "Ben" },
-    { name: "Bena" },
-    { name: "Omer" },
-    { name: "Saar" },
-  ];
+  
+  
 
   useEffect(() => {
+    let dumyOpponents = [
+      { name: "Daniel" },
+      { name: "Ben" },
+      { name: "Bena" },
+      { name: "Omer" },
+      { name: "Saar" },
+    ];
+    const fetchNames = () => {
+      setOpponentsName(dumyOpponents);
+    };
     fetchNames()
   }, [])
 
@@ -26,7 +28,7 @@ const NameFilter = (props) => {
       hideCaret
       hideEmptyPopup
       textField={name}
-      data={dumyOpponents}
+      data={opponentsName}
       filter="contains"
       value={name}
       onChange={(newName) => setName(newName)}

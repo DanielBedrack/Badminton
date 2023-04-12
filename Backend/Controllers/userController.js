@@ -25,7 +25,7 @@ const signupUser = async (req, res) => {
   const { username, password, mail } = req.body;
 
   try {
-    const user = await User.signup(username, password, mail);
+    const user = await User.signup(username, password, mail); // MATCH.CREATE
     const token = createToken(user._id);
 
     res.status(200).json({ success: user, token });
@@ -58,7 +58,7 @@ const getUser = async (req, res) => {
 
 // Delete a User
 const deleteUser = async (req, res) => {
-  const { id } = req.params;
+  const { id } = req.params.id;
 
   if (!mongoose.isValidObjectId(id)) {
     return res.status(404).json({ error: "No such User" });

@@ -4,6 +4,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
 const userRoutes = require("./Routes/User");
+const matchesFilterRoutes = require("./Routes/MatchFilter");
+const matchesRoutes = require("./Routes/Match");
 
 // express app
 const app = express();
@@ -11,7 +13,6 @@ const app = express();
 // middleware
 app.use(express.json());
 
-// app.use(express.static(path.join(__dirname, '/Assets')));
 app.use((req, res, next) => {
   console.log(req.path, req.method);
   next();
@@ -19,6 +20,11 @@ app.use((req, res, next) => {
 
 //routes
 app.use("/api/user", userRoutes);
+//app.use("/api/matches", matchesFilterRoutes);
+app.use("/api/matches", matchesRoutes);
+console.log("right after the matchesRoutes");
+
+
 
 // Connect to db
 mongoose
