@@ -58,6 +58,7 @@ const deleteMatch = async (req, res) => {
 
   res.status(200).json(match);
 };
+
 // Update a user
 const updateMatch = async (req, res) => {
   const { id } = req.params;

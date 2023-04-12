@@ -3,59 +3,6 @@ const bcrypt = require('bcrypt')
 const validator = require('validator')
 const Schema = mongoose.Schema;
 
-// POINT SCHEMA
-const pointSchema = new Schema({
-  point: {
-    type: String,
-    enum: ["Point", "Mistake", "O-Point", "O-Mistake"],
-    required: true,
-  },
-  shot: {
-    type: String,
-    enum: ["Clear", "Drop", "Smash", "Drive", "Net", "Other"],
-    required: true,
-  },
-  shotSide: {
-    type: String,
-    enum: ["Forehand", "Backhand"],
-    required: true,
-  },
-  courtArea: {
-    type: String,
-    enum: ["Net", "Back Line", "Center Court", "Serve"],
-    required: true,
-  },
-  textArea: {
-    type: String,
-  },
-  pointWinnerName: {
-    type: String,
-    required: true,
-  },
-  pointNum: {
-    type: Number
-  }
-});
-const setSchema = new Schema({
-  setWinnerName: { type: String, required: true },
-  points: [pointSchema],
-});
-
-const opponentSchema = new Schema({
-  opponentName: { type: String, required: true },
-  tournament: { type: String, required: true },
-  club: { type: String, required: true },
-  age: { type: String, enum: ["U11", "U13", "U15", "U17", "U19", "Pro"] },
-  strongHand: { type: String, enum: ["Right", "Left"] },
-  country: { type: String, required: true },
-});
-
-const matchSchema = new Schema({
-  opponent: opponentSchema,
-  set: setSchema,
-});
-
-
 const userSchema = new Schema(
   {
     username: {
@@ -71,15 +18,18 @@ const userSchema = new Schema(
       required: true,
       unique: true,
     },
-    matches: [matchSchema]
+    matches: [{
+      type: mongoose.Types.ObjectId,
+      ref:"Match",
+    }]
   },
   { timestamps: true }
 );
 
-// static signup method
+// static SIGNUP method
 userSchema.statics.signup = async function(username, password, mail) {
 
-  //validation
+  // Validation
   if (!username || !password || !mail){
     throw Error('All fields must be field')
   }
@@ -104,6 +54,7 @@ userSchema.statics.signup = async function(username, password, mail) {
   return user;
 }
 
+// static LOGIN method
 userSchema.statics.login = async function(username, password) {
 
   if (!username || !password) {
